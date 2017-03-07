@@ -307,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
         myDB.insertData2("New England Patriots", "James", "White", "ST", 68, 73, 80, 80, 80, 80, 80, 80, 80, 0, 16);
         myDB.insertData2("New England Patriots", "Michael", "Floyd", "LB", 67, 70, 80, 30, 70, 80, 68, 70, 70, 0, 16);
         myDB.insertData2("New England Patriots", "Malcom", "Mitchell", "GK", 73, 78, 80, 80, 80, 80, 80, 80, 80, 78, 16);
-        myDB.insertData2("New England Patriots", "Donata", "Hightower", "RM", 70, 76, 80, 80, 80, 70, 80, 90, 60, 0, 16);
+        myDB.insertData2("New England Patriots", "Donta", "Hightower", "RM", 70, 76, 80, 80, 80, 70, 80, 90, 60, 0, 16);
 
 
     }
