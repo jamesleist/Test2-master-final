@@ -24,7 +24,8 @@
             android:name=".TournamentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_tournament"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".GameplayActivity"></activity>
     </application>
 
 </manifest>
