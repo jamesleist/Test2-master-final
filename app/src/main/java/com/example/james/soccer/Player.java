@@ -11,8 +11,7 @@ import java.util.ArrayList;
 
 public abstract class Player {
     private String fname, lname, position = "";
-    private ArrayList<Integer> stats;
-    private int overall, teamId, SIDE_OF_FIELD;
+    private int overall, height, speed, shooting, passing, dribbling, defending, strength, awareness, goalkeeping, teamId, SIDE_OF_FIELD;
     private Point location, zoneCenter, goal;
     private boolean hasBall, user = false;
     private double velocity;
@@ -24,21 +23,36 @@ public abstract class Player {
         for(int i = 0; i < numbers.length; i++) {
             switch (i) {
                 case 0:
-                    overall = numbers[i];
+                    height = numbers[i];
                     break;
                 case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                    stats.add(numbers[i]);
+                    overall = numbers[i];
                     break;
-                case 11:
+                case 2:
+                    speed = numbers[i];
+                    break;
+                case 3:
+                    shooting = numbers[i];
+                    break;
+                case 4:
+                    passing = numbers[i];
+                    break;
+                case 5:
+                    dribbling = numbers[i];
+                    break;
+                case 6:
+                    defending = numbers[i];
+                    break;
+                case 7:
+                    strength = numbers[i];
+                    break;
+                case 8:
+                    awareness = numbers[i];
+                    break;
+                case 9:
+                    goalkeeping = numbers[i];
+                    break;
+                case 10:
                     teamId = numbers[i];
             }
         }
@@ -66,16 +80,13 @@ public abstract class Player {
         hasBall = false;
     }
     private double getVelocityShot(double distance){
-        int shooting = stats.get(5);
         return distance * (.3) * (shooting/100);
     }
     private double getVelocityPass(Ball ball, Point goal){
         double distance = ball.getDistanceFrom(goal);
-        int passing = stats.get(6);
         return distance * (.3) * (passing/100);
     }
     public void move(Point goal){
-        int speed = stats.get(2);
         int newX = (int)(location.x + ((speed/100)*((goal.x - location.x)/((goal.x - location.x)+(goal.y - location.y)))));
         int newY = (int)(location.y + ((speed/100)*((goal.y - location.y)/((goal.x - location.x)+(goal.y - location.y)))));
         location.set(newX, newY);
@@ -135,5 +146,34 @@ public abstract class Player {
 
     public void setSIDE_OF_FIELD(int SIDE_OF_FIELD) {
         this.SIDE_OF_FIELD = SIDE_OF_FIELD;
+    }
+
+    public int getDribbling() {
+        return dribbling;
+    }
+    public int getDefending() {
+        return defending;
+    }
+    public int getStrength() {
+        return strength;
+    }
+    public int getAwareness() {
+        return awareness;
+    }
+
+    public int getGoalkeeping() {
+        return goalkeeping;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getOverall() {
+        return overall;
     }
 }
