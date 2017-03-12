@@ -2,9 +2,6 @@ package com.example.james.soccer;
 
 import android.graphics.Point;
 
-import java.io.InvalidObjectException;
-import java.util.ArrayList;
-
 /**
  * Created by james on 2/27/2017.
  */
@@ -15,6 +12,7 @@ public abstract class Player {
     private Point location, zoneCenter, goal;
     private boolean hasBall, user = false;
     private double velocity;
+    int c = 0;
 
     public Player(String fname, String lname,String position, int[] numbers){
         this.fname = fname;
