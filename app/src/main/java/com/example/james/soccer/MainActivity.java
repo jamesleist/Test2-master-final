@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         myDB.insertData2("Air Bud", "Air", "Bud", "ST", 26, 99, 99, 99, 99, 99, 99, 99, 99, 0, 1);
         myDB.insertData2("Air Bud", "Brian", "Griffin", "CB", 20, 79, 60, 30, 70, 60, 70, 70, 99, 0, 1);
         myDB.insertData2("Air Bud", "", "Pluto", "CM", 32, 83, 87, 75, 80, 60, 70, 75, 80, 0, 1);
-        myDB.insertData2("Air Bud", "Scobby", "Doo", "CAM", 25, 88, 93, 80, 87, 80, 40, 70, 80, 0, 1);
+        myDB.insertData2("Air Bud", "Scooby", "Doo", "CAM", 25, 88, 93, 80, 87, 80, 40, 70, 80, 0, 1);
         myDB.insertData2("Air Bud", "", "Blue", "RB", 20, 78, 80, 50, 75, 78, 79, 64, 80, 0, 1);
         myDB.insertData2("Air Bud", "", "Benji", "CDM", 20, 82, 80, 60, 75, 78, 79, 75, 80, 0, 1);
         myDB.insertData2("Air Bud", "", "Copper", "LB", 20, 80, 84, 50, 79, 78, 80, 64, 80, 0, 1);
@@ -307,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
         myDB.insertData2("New England Patriots", "James", "White", "ST", 68, 73, 80, 80, 80, 80, 80, 80, 80, 0, 16);
         myDB.insertData2("New England Patriots", "Michael", "Floyd", "LB", 67, 70, 80, 30, 70, 80, 68, 70, 70, 0, 16);
         myDB.insertData2("New England Patriots", "Malcom", "Mitchell", "GK", 73, 78, 80, 80, 80, 80, 80, 80, 80, 78, 16);
-        myDB.insertData2("New England Patriots", "Donata", "Hightower", "RM", 70, 76, 80, 80, 80, 70, 80, 90, 60, 0, 16);
+        myDB.insertData2("New England Patriots", "Donta", "Hightower", "RM", 70, 76, 80, 80, 80, 70, 80, 90, 60, 0, 16);
 
 
     }
