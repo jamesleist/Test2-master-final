@@ -9,18 +9,18 @@ import java.util.ArrayList;
  * Created by james on 2/27/2017.
  */
 
-public class Player {
-    private String fname, lname = "";
+public abstract class Player {
+    private String fname, lname, position = "";
     private ArrayList<Integer> stats;
-    private int overall, teamId;
-    private Point location;
-    private boolean hasBall;
-    private Point zoneCenter;
+    private int overall, teamId, SIDE_OF_FIELD;
+    private Point location, zoneCenter, goal;
+    private boolean hasBall, user = false;
+    private double velocity;
 
-
-    public Player(String fname, String lname, int[] numbers){
+    public Player(String fname, String lname,String position, int[] numbers){
         this.fname = fname;
         this.lname = lname;
+        this.position = position;
         for(int i = 0; i < numbers.length; i++) {
             switch (i) {
                 case 0:
@@ -43,37 +43,97 @@ public class Player {
             }
         }
     }
+    public abstract void setZone(int SIDE_OF_FIELD);
+    public abstract void defend(Ball ball);
+    public abstract void attack(Ball ball);
+
+    public void pass(Ball ball, Point goal){
+        if(!hasBall)
+            return;
+        ball.isKicked(goal, getVelocityPass(ball, goal));
+        hasBall = false;
+    }
+    public void shoot(Ball ball, int SIDE_OF_FIELD, Point goal){
+        if(!hasBall)
+            return;
+        double distance = ball.getDistanceFrom(goal);
+        if(SIDE_OF_FIELD == Constants.RIGHT_SIDE){
+            goal.set(150, goal.y);
+        } else {
+            goal.set(-150, goal.y);
+        }
+        ball.isKicked(goal, getVelocityShot(distance));
+        hasBall = false;
+    }
+    private double getVelocityShot(double distance){
+        int shooting = stats.get(5);
+        return distance * (.3) * (shooting/100);
+    }
+    private double getVelocityPass(Ball ball, Point goal){
+        double distance = ball.getDistanceFrom(goal);
+        int passing = stats.get(6);
+        return distance * (.3) * (passing/100);
+    }
+    public void move(Point goal){
+        int speed = stats.get(2);
+        int newX = (int)(location.x + ((speed/100)*((goal.x - location.x)/((goal.x - location.x)+(goal.y - location.y)))));
+        int newY = (int)(location.y + ((speed/100)*((goal.y - location.y)/((goal.x - location.x)+(goal.y - location.y)))));
+        location.set(newX, newY);
+    }
+    public void dribble(Ball ball, Point goal){
+        move(goal);
+        ball.setLocation(location);
+    }
+
+
+    public String getPosition(){
+        return position;
+    }
+    public void setZoneCenter(Point location){
+        zoneCenter = location;
+    }
     public void setLocation(Point location){
         this.location = location;
     }
-    public void setZone(Point location){
-        this.location = location;
+    public Point getGoal() {
+        return goal;
     }
-    public void pass(Ball ball, Point goal, Player target){
-        if(!hasBall)
-            return;
-        ball.isKicked(goal, getVelocityPass(goal));
-        hasBall = false;
+    public void setGoal(Point goal) {
+        this.goal = goal;
     }
-    public void shoot(Ball ball, Point goal){
-        if(!hasBall)
-            return;
-
-        hasBall = false;
+    public Point getZoneCenter() {
+        return zoneCenter;
     }
-    private double getVelocityShot(){
-        return 0.0;
+    public Point getLocation() {
+        return location;
     }
-    private double getVelocityPass(Point goal){
-        return 0.0;
+    public String getLname() {
+        return lname;
     }
-    public void move(Point goal){
-
+    public String getFname() {
+        return fname;
     }
     public boolean getHasBall(){
         return hasBall;
     }
     public void giveBall() {
         hasBall = true;
+    }
+    public boolean isUser(){
+        return user;
+    }
+    public void setUser(boolean user){
+        this.user = user;
+    }
+    public boolean isMoving(){
+        return (velocity != 0);
+    }
+
+    public int getSIDE_OF_FIELD() {
+        return SIDE_OF_FIELD;
+    }
+
+    public void setSIDE_OF_FIELD(int SIDE_OF_FIELD) {
+        this.SIDE_OF_FIELD = SIDE_OF_FIELD;
     }
 }

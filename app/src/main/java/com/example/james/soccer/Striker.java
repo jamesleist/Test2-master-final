@@ -5,7 +5,22 @@ package com.example.james.soccer;
  */
 
 public class Striker extends Player {
-    public Striker(String fname, String lname, int[] numbers) {
-        super(fname, lname, numbers);
+    public Striker(String fname, String lname, String position, int[] numbers) {
+        super(fname, lname, position, numbers);
+    }
+
+    @Override
+    public void setZone(int SIDE_OF_FIELD) {
+
+    }
+
+    @Override
+    public void defend(Ball ball) {
+
+    }
+
+    @Override
+    public void attack(Ball ball) {
+
     }
 }

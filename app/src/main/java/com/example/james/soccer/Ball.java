@@ -13,6 +13,7 @@ public class Ball {
     }
     public Ball(Point location){
         this.location = location;
+        velocity = 0;
     }
     public void isKicked(Point goal, double velocity){
         this.goal = goal;
@@ -28,12 +29,14 @@ public class Ball {
         int newX = (int)(location.x + ((velocity/100)*((goal.x - location.x)/((goal.x - location.x)+(goal.y - location.y)))));
         int newY = (int)(location.y + ((velocity/100)*((goal.y - location.y)/((goal.x - location.x)+(goal.y - location.y)))));
         location.set(newX, newY);
-        velocity -= velocity * (1.0/getDistanceFromGoal());
+        velocity -= velocity * (1.0/getDistanceFrom(goal));
     }
+
     public boolean isPossessed(){
         return possession;
     }
-    private double getDistanceFromGoal(){
+
+    public double getDistanceFrom(Point goal){
         double result = Math.pow((goal.x - location.x), 2) + Math.pow((goal.y - location.y), 2);
         return Math.sqrt(result/2);
     }
@@ -47,5 +50,11 @@ public class Ball {
     }
     public void setLocation(Point location){
         this.location.set(location.x, location.y);
+    }
+    public double getVelocity(){
+        return velocity;
+    }
+    public Point getLocation(){
+        return location;
     }
 }
