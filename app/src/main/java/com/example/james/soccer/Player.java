@@ -12,7 +12,6 @@ public abstract class Player {
     private Point location, zoneCenter, goal;
     private boolean hasBall, user = false;
     private double velocity;
-    int c = 0;
 
     public Player(String fname, String lname,String position, int[] numbers){
         this.fname = fname;
