@@ -332,4 +332,9 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this,PvP_BluetoothActivity.class);
         startActivity(myIntent);
     }
+
+    public void Practice(View view) {
+        Intent myIntent = new Intent(this,PracticeActivity.class);
+        startActivity(myIntent);
+    }
 }
