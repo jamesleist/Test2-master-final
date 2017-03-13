@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         myDB.insertData2("Portugal", "Jao", "Moutinho", "CAM", 68, 80, 70, 80, 80, 80, 50, 80, 80, 0, 11);
         myDB.insertData2("Portugal", "", "Tiago", "CAM", 68, 76, 70, 70, 76, 79, 50, 67, 70, 0, 11);
 
-        myDB.insertData2("Trump", "Donald", "Trump", "ST", 70, 85, 85, 85, 85, 85, 85, 85, 85, 85, 12);
+        myDB.insertData2("Trump", "Donald", "Trump", "G", 70, 85, 85, 85, 85, 85, 85, 85, 85, 85, 12);
         myDB.insertData2("Trump", "Donald", "Trump", "ST", 70, 85, 85, 85, 85, 85, 85, 85, 85, 85, 12);
         myDB.insertData2("Trump", "Donald", "Trump", "ST", 70, 85, 85, 85, 85, 85, 85, 85, 85, 85, 12);
         myDB.insertData2("Trump", "Donald", "Trump", "ST", 70, 85, 85, 85, 85, 85, 85, 85, 85, 85, 12);
