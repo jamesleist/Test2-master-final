@@ -1,14 +1,14 @@
 package com.example.james.soccer;
 
-/**
- * Created by james on 3/7/2017.
- */
 
 public class Constants {
     static protected final int RIGHT_SIDE = 1919;
     static protected final int LEFT_SIDE = 9191;
     static protected final int FAR_GOAL_POST = 15;
     static protected final int CLOSE_GOAL_POST = -15;
+    static protected final int FIRST_HALF = 555;
+    static protected final int SECOND_HALF = 777;
+    static protected final int DONE = 999;
 
     //Defensive formation
     static protected final int BACK_LINE_START_RIGHT = 80;

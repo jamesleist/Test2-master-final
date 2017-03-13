@@ -106,6 +106,7 @@ public abstract class Player {
     public Point getGoal() {
         return goal;
     }
+    public boolean hasGoal(){ return goal != null;}
     public void setGoal(Point goal) {
         this.goal = goal;
     }
