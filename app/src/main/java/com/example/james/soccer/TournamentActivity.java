@@ -118,6 +118,8 @@ public class TournamentActivity extends AppCompatActivity {
         delayedHide(100);
     }
 
+
+
     private void toggle() {
         if (mVisible) {
             hide();
