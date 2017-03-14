@@ -1,5 +1,6 @@
 package com.example.james.soccer;
 
+import android.graphics.Point;
 import android.media.Image;
 import android.os.CountDownTimer;
 import android.widget.ImageView;
@@ -26,6 +27,7 @@ public class myTimer extends CountDownTimer {
 
     @Override
     public void onTick(long millisUntilFinished) {
+
         if(striker.hasGoal()){
             striker.move(striker.getGoal());
         }
@@ -51,5 +53,14 @@ public class myTimer extends CountDownTimer {
     public int getIndicator(){
         return INDICATOR;
 
+    }
+    public void setStrikerLocation(Point point){
+        striker.setLocation(point);
+    }
+    public void setGoalieLocation(Point point){
+        goalie.setLocation(point);
+    }
+    public void setBallLocation(Point point){
+        ball.setLocation(point);
     }
 }

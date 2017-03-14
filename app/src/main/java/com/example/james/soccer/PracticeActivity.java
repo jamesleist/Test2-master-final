@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 
 
 public class PracticeActivity extends AppCompatActivity {
+    myTimer timer;
     ImageView airbud, trump, ball_image;
     RelativeLayout myLayout;
     Button shoot;
@@ -75,6 +76,8 @@ public class PracticeActivity extends AppCompatActivity {
                         return false;
                 }
 
+                //user.setLocation(new Point((int)airbud.getX(), (int)airbud.getY()));
+                //timer.setStrikerLocation(user.getLocation());
 
                 return true;
             }
@@ -96,7 +99,7 @@ public class PracticeActivity extends AppCompatActivity {
                 }
 
                 ball = new Ball(new Point((int)ball_image.getX(), (int)ball_image.getY()));
-
+                timer.setBallLocation(ball.getLocation());
                 return true;
             }
         });
@@ -108,7 +111,8 @@ public class PracticeActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        myTimer timer = new myTimer(99999999, Constants.FIRST_HALF, user, goalie, ball, myLayout );
+        timer = new myTimer(99999999, Constants.FIRST_HALF, user, goalie, ball, myLayout );
+        timer.start();
     }
 
   /*  public boolean onTouch(ImageView view, MotionEvent event){
@@ -117,7 +121,10 @@ public class PracticeActivity extends AppCompatActivity {
         user.setGoal(new Point(X,Y));
         return true;
     }*/
-
+    public void shoot(View view){
+        ball.isKicked(new Point(user.getLocation().x - 50,user.getLocation().y), 40);
+        timer.setBallLocation(ball.getLocation());
+    }
 
     public boolean onTouch1(ImageView view, MotionEvent event) {
         boolean tf = false;
