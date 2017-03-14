@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="30sp"
         android:layout_height="30sp"
-        app:srcCompat="@drawable/shepherd_default"
+        app:srcCompat="@drawable/trumpt"
         android:id="@+id/trump"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
@@ -19,7 +19,7 @@
     <ImageView
         android:layout_width="30sp"
         android:layout_height="30sp"
-        app:srcCompat="@drawable/shepherd_default"
+        app:srcCompat="@drawable/shepherdrun"
         android:layout_alignBottom="@+id/trump"
         android:layout_centerHorizontal="true"
         android:id="@+id/airbud" />
